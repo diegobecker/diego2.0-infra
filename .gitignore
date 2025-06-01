@@ -1,0 +1,42 @@
+# Terraform directories (providers, cache, etc.)
+.terraform/
+.terraform.lock.hcl.backup
+
+# Terraform state files and backups
+*.tfstate
+*.tfstate.backup
+crash.log
+
+# Terraform binary plan files
+*.tfplan
+
+# Temporary and local files
+*.log
+*.bak
+*.tmp
+*.swp
+*.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Credentials and env files (make sure not to store secrets here)
+*.env
+.envrc
+.env.*
+
+# GitHub Actions (optional: ignore temporary artifacts)
+.github/workflows/*.bak
+.github/*.log
+.github/*-temp*
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS system files
+.DS_Store
+
+# Node modules (if using npm with Hugo or similar tools)
+node_modules/
