@@ -34,3 +34,10 @@ module "acm" {
   domain_name    = var.domain_name
   hosted_zone_id = module.route53.zone_id
 }
+
+module "cloudfront" {
+  source                   = "./modules/cloudfront"
+  domain_name              = var.domain_name
+  s3_bucket_website_endpoint = module.site_s3.website_endpoint
+  acm_certificate_arn      = module.acm.certificate_arn
+}
