@@ -41,3 +41,10 @@ module "cloudfront" {
   s3_bucket_website_endpoint = module.site_s3.website_endpoint
   acm_certificate_arn      = module.acm.certificate_arn
 }
+
+module "dns_records" {
+  source                = "./modules/dns_records"
+  domain_name           = var.domain_name
+  hosted_zone_id        = module.route53.zone_id
+  cloudfront_domain_name = module.cloudfront.cloudfront_domain_name
+}
